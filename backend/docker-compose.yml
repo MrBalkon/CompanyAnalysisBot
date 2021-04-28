@@ -1,13 +1,13 @@
 version: '3.7'
 
 services:
-  sna-backend:
+  cab-backend:
     container_name: ${PROJECT_NAME}-backend
     build:
       context: .
       target: ${NODE_ENV}
     links:
-      - "sna-db:database"
+      - "cab-db:database"
     volumes:
       - .:/usr/src/app
     ports:
@@ -16,10 +16,10 @@ services:
     env_file:
       - .env
     depends_on:
-      - sna-db
+      - cab-db
     tty: true
 
-  sna-db:
+  cab-db:
     container_name: ${PROJECT_NAME}-postgres
     image: postgres:12
     environment:

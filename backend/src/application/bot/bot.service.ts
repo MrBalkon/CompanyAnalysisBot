@@ -20,12 +20,12 @@ export class TelegramService implements OnModuleInit{
     Logger.info(`Initialization... telegram`);
 
     await ActionsProvider(this.bot, this.yandexService, this.textParserService)
-    this.bot.command('start', (ctx) => {
-      ctx.reply('Hello!')
-      ctx.replyWithDocument('../../../../out.csv', {
+  //   this.bot.command('start', (ctx) => {
+  //     ctx.reply('Hello!')
+  //     ctx.replyWithDocument('../../../../out.csv', {
         
-      })
-  })
+  //     })
+  // })
     this.bot.launch()
   }
   
